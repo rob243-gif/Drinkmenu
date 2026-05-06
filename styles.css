@@ -366,6 +366,7 @@ h2 {
   line-height: 1.02;
   color: var(--text);
   letter-spacing: -0.02em;
+  text-transform: none;
 }
 
 .card-subtitle {
