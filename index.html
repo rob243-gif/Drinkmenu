@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drink Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-dark">
+  <div class="page-shell">
+    <header class="hero">
+      <div>
+        <h1>Eldrisar Brewing<br></h1><h2>Peachland, BC</h2>
+      </div>
+      <div class="hero-actions">
+        <button id="themeToggle" class="theme-toggle" type="button">Switch to light theme</button>
+        <button id="detailsToggle" class="theme-toggle details-toggle" type="button" title="Show brew details">🍺</button>
+      </div>
+    </header>
+
+    <section class="controls-card">
+      <div class="controls-row">
+        <div class="search-group">
+          <label for="searchInput">Search</label>
+          <input id="searchInput" type="search" placeholder="Search by name, description, or ingredient" />
+        </div>
+        <div id="filterControls" class="filter-controls"></div>
+      </div>
+      <div class="controls-actions">
+        <button id="clearButton" type="button">Clear filters</button>
+      </div>
+    </section>
+
+    <section id="message" class="message"></section>
+
+    <section id="itemsGrid" class="items-grid" aria-live="polite"></section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
