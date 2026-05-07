@@ -149,16 +149,24 @@ body.theme-dark .theme-toggle {
 }
 
 .hero-actions {
+  display: none;
+}
+
+.page-actions {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
   gap: 12px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  padding-right: 40px;
+  z-index: 20;
+}
+
+@media (max-width: 760px) {
+  .page-actions {
+    right: 14px;
+    bottom: 14px;
+  }
 }
 
 .theme-toggle {
@@ -439,6 +447,10 @@ h2 {
   .card-details {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .hero {
+    aspect-ratio: 16 / 9;
+    min-height: 250px;
   }
 }
 

@@ -15,10 +15,6 @@
       <div>
         <h1>Eldrisar Brewing<br></h1><h2>Peachland, BC</h2>
       </div>
-      <div class="hero-actions">
-        <button id="themeToggle" class="theme-toggle" type="button">Switch to light theme</button>
-        <button id="detailsToggle" class="theme-toggle details-toggle" type="button" title="Show brew details">🍺</button>
-      </div>
     </header>
 
     <section class="controls-card">
@@ -37,6 +33,11 @@
     <section id="message" class="message"></section>
 
     <section id="itemsGrid" class="items-grid" aria-live="polite"></section>
+
+    <div class="page-actions">
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">☀️</button>
+      <button id="detailsToggle" class="theme-toggle details-toggle" type="button" aria-label="Toggle brew details">🍺</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
