@@ -53,7 +53,9 @@ body.theme-light .theme-toggle {
 }
 
 body.theme-light .hero {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.96) 50%, rgba(255, 255, 255, 0.98) 100%);
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(248, 250, 252, 0) 50%, rgba(255, 255, 255, 0) 100%),
+    url('banner.png') center / cover no-repeat;
   border: 2px solid rgba(99, 102, 241, 0.3);
   border-left: 4px solid rgba(99, 102, 241, 0.6);
   border-right: 4px solid rgba(124, 58, 237, 0.5);
@@ -97,10 +99,12 @@ body.theme-dark .theme-toggle {
 }
 
 .hero {
-  padding: 48px 40px;
+  padding: 0;
   margin-bottom: 40px;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.96) 50%, rgba(15, 23, 42, 0.98) 100%);
+  background: 
+    linear-gradient(135deg, rgba(15, 23, 42, 0) 0%, rgba(30, 41, 59, 0) 50%, rgba(15, 23, 42, 0) 100%),
+    url('banner.png') center / cover no-repeat;
   border: 2px solid rgba(124, 58, 237, 0.4);
   border-left: 4px solid rgba(124, 58, 237, 0.8);
   border-right: 4px solid rgba(168, 85, 247, 0.6);
@@ -115,11 +119,12 @@ body.theme-dark .theme-toggle {
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-right: 0;
+  min-height: 400px;
+  aspect-ratio: 16 / 6;
 }
 
 .hero > div:first-child {
-  flex: 1;
+  display: none;
 }
 
 .hero::before {
