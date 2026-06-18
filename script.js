@@ -160,7 +160,7 @@ function applyFilters() {
       return String(row[column] || "").trim() === value;
     });
 
-    return matchesSearch && matchesFilters;
+    return matchesSearch && matchesFilters && !isSoldOut(row);
   });
 
   const count = visibleRows.length;
@@ -216,7 +216,7 @@ function renderCards(data) {
           ${abv || (showDetails && (brewDate || dateBottled)) ? `<div class="card-details">
             ${abv ? `<span><strong>ABV:</strong> ${abv}</span>` : ""}
             ${showDetails && brewDate ? `<span><strong>Brew Date:</strong> ${brewDate}</span>` : ""}
-            ${showDetails && dateBottled ? `<span><strong>Bottling Date:</strong> ${dateBottled}</span>` : ""}
+            ${showDetails && dateBottled ? `<span><strong>Bottle Date:</strong> ${dateBottled}</span>` : ""}
           </div>` : ""}
         </article>
       `;
@@ -243,6 +243,30 @@ function formatAbv(value) {
     return `${percentage}%`;
   }
   return text;
+}
+
+function getRowValue(row, keys) {
+  for (const key of keys) {
+    if (row[key] !== undefined) {
+      return row[key];
+    }
+  }
+  return "";
+}
+
+function isSoldOut(row) {
+  const raw = String(getRowValue(row, [
+    "Sold out",
+    "Sold Out",
+    "Sold",
+    "Availability",
+    "Status",
+    "In stock",
+    "Sold Out?",
+    "Sold?",
+    "SoldOut"
+  ])).trim().toLowerCase();
+  return raw === "yes" || raw === "y" || raw === "true" || raw === "sold out";
 }
 
 function showMessage(text) {
